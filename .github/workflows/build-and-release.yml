@@ -16,11 +16,11 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Compile AHK script
-      uses: nekocodeX/GitHub-Action-Ahk2Exe@main
+      uses: w-Digital-Innovations/ahk2exe-action@v1
       with:
-        in: '智能F3/智能F3.ahk'
-        out: '智能F3.exe'
-        icon: '智能F3/智能F3.ico'
+        scriptPath: '智能F3/智能F3.ahk'
+        outputPath: '智能F3.exe'
+        iconPath: '智能F3/智能F3.ico'
 
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/')
