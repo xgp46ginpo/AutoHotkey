@@ -1,0 +1,42 @@
+name: Build and Release AutoHotkey Script
+
+on:
+  push:
+    tags:
+      - 'v*' # 触发条件：推送 v 开头的标签, e.g., v1.0, v1.2.1
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Compile AHK script
+      uses: hotkey-actions/ahk2exe@v1
+      with:
+        script-path: '智能F3/智能F3.ahk'
+        icon-path: '智能F3/智能F3.ico'
+        out-file: '智能F3.exe'
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./智能F3.exe
+        asset_name: 智能F3.exe
+        asset_content_type: application/vnd.microsoft.portable-executable
