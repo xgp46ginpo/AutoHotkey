@@ -18,9 +18,9 @@ jobs:
     - name: Compile AHK script
       uses: benmusson/ahk2exe-action@v1
       with:
-        in: '智能F3/智能F3.ahk'
-        out: '智能F3.exe'
-        icon: '智能F3/智能F3.ico'
+        in: '.\智能F3\智能F3.ahk'
+        out: '.\智能F3.exe'
+        icon: '.\智能F3\智能F3.ico'
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create Release
