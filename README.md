@@ -1,42 +1,52 @@
 # AutoHotkey 实用脚本集
 
-这是一个包含多个实用 AutoHotkey (AHK) v2 脚本的集合，旨在提高日常操作效率。
+[![AutoHotkey v2](https://img.shields.io/badge/AutoHotkey-v2.0-brightgreen.svg)](https://www.autohotkey.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build and Release](https://github.com/xgp46ginpo/AutoHotkey/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/xgp46ginpo/AutoHotkey/actions/workflows/build-and-release.yml)
 
-## 包含的脚本
+这是一个包含多个实用 AutoHotkey (AHK) v2 脚本的集合，旨在通过简化常见任务来提高您的工作效率。
 
-### 1. 智能F3 (`智能F3/`)
+## ✨ 功能亮点
 
-这是一个功能强大的多用途脚本，通过 `F3` 热键触发。
+- **智能 F3**：一个按键，多种用途。自动识别选中文本是链接、商品ID还是普通文本，并执行相应操作（打开、搜索等）。
+- **剪贴板增强**：自动清理剪贴板内容，粘贴时去除首尾多余的空格。
 
-*   **功能**:
-    1.  **打开链接**: 如果您选中的文本是一个网址 (URL)，它会自动在您的默认浏览器中打开。
-    2.  **打开商品**: 如果选中的文本是一个10位的 Coupang 商品ID，它会自动打开对应的商品页面。
-    3.  **网页搜索**: 如果选中的文本既不是链接也不是商品ID，它会自动将该文本作为关键词在 Coupang 网站上进行搜索。
-*   **热键**: `F3`
-*   **文件**:
-    *   `智能F3.ahk`: 脚本源文件。
-    *   `智能F3.ico`: 配套的图标文件。
-    *   `_archive/`: 存放开发过程中的旧版本脚本。
+---
 
-### 2. 剪贴板工具 (`剪贴板工具/`)
+## 🚀 快速开始
 
-包含用于增强剪贴板功能的小工具。
+您可以通过两种方式使用这些脚本：
 
-*   **脚本**: `粘贴去空格.ahk`
-*   **功能**: 当您使用 `Ctrl+Alt+V` 进行粘贴时，此脚本会自动去除剪贴板中文本内容首尾的空格，然后再执行粘贴操作。对于从网页或文档中复制多余空格的内容非常有用。
-*   **热键**: `Ctrl+Alt+V`
-
-## 如何使用
+### 方式一：直接运行 (推荐给已安装 AHK 的用户)
 
 1.  确保您已经安装了 [AutoHotkey v2](https://www.autohotkey.com/) 或更高版本。
-2.  下载或克隆本项目到您的电脑。
-3.  根据您的需要，直接双击运行对应的 `.ahk` 脚本文件。
-4.  脚本将在系统后台运行，您可以通过对应的热键来触发它们的功能。
+2.  克隆或下载本项目到您的电脑。
+    ```bash
+    git clone https://github.com/xgp46ginpo/AutoHotkey.git
+    ```
+3.  进入项目目录，双击运行您需要的 `.ahk` 脚本文件。
 
-## 贡献指南
+### 方式二：使用编译好的程序 (推荐给未安装 AHK 的用户)
 
-欢迎您为这个项目做出贡献！如果您有任何改进建议或发现了bug，请随时提交 Pull Request 或创建 Issue。
+1.  前往本项目的 [**Releases**](https://github.com/xgp46ginpo/AutoHotkey/releases) 页面。
+2.  下载最新版本的 `.zip` 压缩包。
+3.  解压后，直接运行其中的 `.exe` 文件，无需安装 AutoHotkey 环境。
 
-## 许可证
+---
 
-本项目采用 MIT 许可证。
+## 🛠️ 脚本详情
+
+| 脚本名称 | 目录 | 热键 | 功能描述 |
+| :--- | :--- | :--- | :--- |
+| **智能 F3** | `智能F3/` | `F3` | 1. **打开链接**: 选中文本为 URL 时，在浏览器中打开。<br>2. **打开商品**: 选中文本为 Coupang 商品ID时，打开商品页。<br>3. **网页搜索**: 其他情况，在 Coupang 网站上搜索选中的文本。 |
+| **粘贴去空格** | `剪贴板工具/` | `Ctrl`+`Alt`+`V` | 粘贴时，自动去除剪贴板内容首尾的空格。 |
+
+---
+
+## 🤝 贡献指南
+
+欢迎您为这个项目做出贡献！如果您有任何改进建议、新功能想法或发现了bug，请随时提交 Pull Request 或创建 Issue。
+
+## 📄 许可证
+
+本项目采用 [MIT](https://opensource.org/licenses/MIT) 许可证。
